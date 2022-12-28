@@ -11,7 +11,7 @@ Target machine for Nexus mentioned as `@hostname` in [hosts.yaml](./inventory/ho
 
 * Java 8 (mandatory).
 
-## Install
+## Install Nexus via [playbook](./playbooks/install_nexus.yaml)
 
 * Install [ansible galaxy role](https://github.com/ansible-ThoTeam/nexus3-oss)
 
@@ -41,7 +41,9 @@ Above example is for host machine `172.17.0.3`, connection via `ssh` for user `r
 ansible-playbook -v ./playbooks/install-nexus.yaml -i ./inventory
 ```
 
-## This [playbook](./playbooks/install_nexus.yaml) is using [ansible-thoteam/nexus3-oss](https://galaxy.ansible.com/ansible-thoteam/nexus3-oss) role and does the following
+## Notes
+
+This [playbook](./playbooks/install_nexus.yaml) is using [ansible-thoteam/nexus3-oss](https://galaxy.ansible.com/ansible-thoteam/nexus3-oss) role and does the following
 
 * Install Nexus OSS - the [latest](https://help.sonatype.com/repomanager3/product-information/download#Download-DownloadtheLatestVersion) version
 * Create Users and Roles for pushing to Docker-hosted and Helm-hosted repositories. Details can be found in `nexus_roles` and `nexus_local_users` variables in [playbook](./playbooks/install_nexus.yaml) 
