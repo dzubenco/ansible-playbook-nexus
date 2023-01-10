@@ -33,6 +33,14 @@
           - nx-repository-admin-helm-helm-hosted-*
           - nx-repository-view-helm-*-*
         roles: []
+      - id: npm-contributor  # can map to a LDAP group id, also used as a key to update a role
+        name: npm-contributor
+        description: npm-contributor
+        privileges:
+          - nx-repository-admin-npm-npm-hosted-*
+          - nx-repository-admin-npm-npm-group-*
+          - nx-repository-view-npm-*-*
+        roles: []
     nexus_local_users:
       - username: docker-contributor
         first_name: Docker
@@ -48,6 +56,13 @@
         password: "123123123"
         roles:
           - helm-contributor
+      - username: npm-contributor
+        first_name: npm
+        last_name: Contributor
+        email: npm-contributor@company.com
+        password: "123123123"
+        roles:
+          - npm-contributor
     nexus_repos_cleanup_policies:
       - name: mvn_cleanup
         format: maven2
